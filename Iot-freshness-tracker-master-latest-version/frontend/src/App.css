@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0.5rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+body {
+  background-size: cover;        /* Scales the image to cover the entire area */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents tiling */
+  background-color:#0dcf4b;
+}
+
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  background:  #f59a5a;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  display: inline-block;
+}
+
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.phase-buttons {
+  display: flex;
+  gap: 0.5rem;
+  
+}
+
+.phase-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e2f29d;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.phase-button.active {
+  background-color: #0f6b12;
+  color: #ffffff;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.phase-button:hover {
+  background-color: #d6f205;
+  color:black;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f99615;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #f8c668;
+}
+
+.patch-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patch-selector label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.patch-selector select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.charts-grid {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+
+}
+
+.charts-row:nth-child(2) {
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.chart-container {
+  background-color: #f1f86a;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 250px;
+  color:black;
+  font-weight: bold;
+  
+}
+
+.chart-container h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  text-align: center;
+}
+
+.chart-container p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #666;
+}
+
+.table-container {
+  padding: 0.5rem;
+  background-color: #f9cf88;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .charts-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .phase-button,
+  .action-buttons button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .patch-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-container {
+    height: 180px;
+  }
+
+  .phase-button,
+  .action-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+}
